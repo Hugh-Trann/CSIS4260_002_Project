@@ -82,11 +82,17 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
-### 4. Train model
+### 4. Build dataset
+
+python download_weather_and_merge.py
+
+This step creates: nycflights_with_weather.csv
+
+### 5. Train model
 
 python final_project_with_eda_plots.py
 
-### 5. Run dashboard
+### 6. Run dashboard
 
 streamlit run app.py
 
