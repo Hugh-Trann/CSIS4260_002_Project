@@ -76,7 +76,7 @@ python -m venv .venv
 
 ### 2. Activate (PowerShell)
 
-..venv`\Scripts`{=tex}`\Activate`{=tex}.ps1
+.venv\Scripts\activate
 
 ### 3. Install dependencies
 
