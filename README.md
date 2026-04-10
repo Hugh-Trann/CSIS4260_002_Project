@@ -22,18 +22,18 @@ Predict: arr_delay (arrival delay in minutes)
 
 ##  Project Structure
 
-project_folder/
-│
-├── final_project_with_eda_plots.py   # main ML pipeline
-├── download_weather_and_merge.py     # API + data merging
-├── app.py                           # Streamlit dashboard
-│
-├── nycflights.csv
-├── nycflights_with_weather.csv
-│
-├── requirements.txt
-│
-└── outputs/
+    project_folder/
+
+    final_project_with_eda_plots.py   # main ML pipeline
+    download_weather_and_merge.py     # API + data merging
+    app.py                           # Streamlit dashboard
+
+     nycflights.csv
+    nycflights_with_weather.csv
+
+     requirements.txt
+    
+    outputs/
     ├── best_model.pkl
     ├── model_results.csv
     ├── validation_results.csv
