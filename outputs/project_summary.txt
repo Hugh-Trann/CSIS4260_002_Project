@@ -1,0 +1,30 @@
+Flights + Weather Project Summary
+Target variable: arr_delay (arrival delay)
+
+Important modeling choices:
+- Removed dep_delay from features to avoid making the target too easy to predict.
+- Removed air_time from features because it is too close to post-flight information.
+- Removed visibility from the weather collection step.
+- Added route/carrier historical features using past data only.
+- Added weather risk score features.
+- Added origin-hour traffic count features.
+- Used chronological train/validation/test split instead of random split.
+- Train end at: 2013-09-15 05:56:00
+- Validation end at: 2013-11-06 18:55:00
+- Test starts at: 2013-11-06 18:56:00
+
+Validation results:
+- HistGradientBoosting_lr0.05_depth6_iter200_leaf20: RMSE = 31.13, MAE = 20.11, R^2 = 0.020
+- HistGradientBoosting_lr0.08_depth6_iter250_leaf30: RMSE = 31.26, MAE = 20.30, R^2 = 0.011
+- Linear Regression: RMSE = 31.40, MAE = 20.82, R^2 = 0.002
+- HistGradientBoosting_lr0.05_depth8_iter300_leaf20: RMSE = 31.98, MAE = 21.06, R^2 = -0.035
+- HistGradientBoosting_lr0.1_depth6_iter200_leaf20: RMSE = 32.02, MAE = 20.85, R^2 = -0.038
+- Random Forest: RMSE = 33.24, MAE = 22.97, R^2 = -0.118
+
+Final test results:
+- HistGradientBoosting_lr0.05_depth6_iter200_leaf20: RMSE = 38.54, MAE = 22.35, R^2 = 0.142
+- Random Forest: RMSE = 39.92, MAE = 24.51, R^2 = 0.080
+- Linear Regression: RMSE = 48.55, MAE = 32.50, R^2 = -0.361
+
+Best model on test set: HistGradientBoosting_lr0.05_depth6_iter200_leaf20
+Interpretation: Lower RMSE and MAE are better, and higher R^2 is better. This project uses schedule, route, engineered weather conditions, historical route/carrier behavior, and traffic count proxies to predict flight arrival delay.
